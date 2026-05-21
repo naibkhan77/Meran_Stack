@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .card {
+            border: 1px solid skyblue; 
+            padding: 10px;
+            margin: 10px; 
+            border-radius: 8px;
+        }
+
+        .highlight {
+            border: 2px solid; 
+            background-color: beige;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <h1 id="heading">NexusBerry</h1>
+    <h2>Courses</h2>
+    <p>Training Institute</p>
+    <p>Mera Stack Course</p>
+
+    <div class="card highlight" data-priorty="High">
+        <p>product: 1 <strong>Laptop</strong> title</p>
+        <span>Priorty: High</span>
+    </div>
+
+    <div class="card">
+        <p>product: 2 <strong>Mobile</strong> title</p>
+        <span>Priorty: Low</span>
+    </div>
+
+    <div class="card highlight" data-priorty="High">
+        <p>product: 3 <strong>Moter Bike</strong> title</p>
+        <span>Priorty: High</span>
+    </div>
+
+    <script>
+        // NodeList -> Array (to use map, filter, reduce)
+        const cardArray = [...document.querySelectorAll(".card")];
+        const highPriority = cardArray.filter(card => card.dataset.priorty === "High"); 
+        console.log("High Priority Cards: ", highPriority.length)
+
+       // cardArray.forEach(card => card.classList.add("highlight"))
+        highPriority.forEach(card => card.classList.add("highlight"))
+
+    </script>
+
+</body>
+</html>
